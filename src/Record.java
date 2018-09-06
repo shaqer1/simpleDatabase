@@ -7,9 +7,9 @@ public class Record {
     private String address;
     private String officePhone;
     private int age;
-    private int gpa;
+    private double gpa;
 
-    public Record(String name, String ssn, String homePhone, String address, String officePhone, int age, int gpa){
+    public Record(String name, String ssn, String homePhone, String address, String officePhone, int age, double gpa){
         this.name = name;
         this.ssn = ssn;
         this.homePhone = homePhone;
@@ -67,11 +67,11 @@ public class Record {
         this.age = age;
     }
 
-    public int getGpa() {
+    public double getGpa() {
         return gpa;
     }
 
-    public void setGpa(int gpa) {
+    public void setGpa(double gpa) {
         this.gpa = gpa;
     }
 

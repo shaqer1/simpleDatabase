@@ -1,7 +1,7 @@
-INSERT <Shafay Haq,SSN,home phone, ,office phone,18,3
-INSERT <Shafay,ssn,homes ph,add,office,18,9
-INSERT <Shafay,ssn1,homes ph,add,office,18,9
-INSERT <Shafay,ssn2, ,add,office,18,9
-INSERT <Shafay,ssn3,homes ph,add,office,18,9
-DELETE <Shafay Haq,SSN,home phone, ,office phone,18,3
-UPDATE <Shafay,ssn3,homes ph,add,office,18,9 <Shafay,ssn3UPDATED,homes ph,add,office,18,9
+INSERT <Shafay Haq,SSN,home phone, ,office phone,18,3.5
+INSERT <Shafay,ssn,homes ph,add,office,18,9.7
+INSERT <Shafay,ssn1,homes ph,add,office,18,9.2
+INSERT <Shafay,ssn2, ,add,office,18,9.5
+INSERT <Shafay,ssn3,homes ph,add,office,18,9.8
+DELETE <Shafay Haq,SSN,home phone, ,office phone,18,3.5
+UPDATE <Shafay,ssn3,homes ph,add,office,18,9.8 <Shafay,ssn3UPDATED,homes ph,add,office,18,9.8

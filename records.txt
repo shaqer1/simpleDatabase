@@ -1,4 +1,6 @@
-Shafay,ssn,homes ph,add,office,18,9
-Shafay,ssn1,homes ph,add,office,18,9
-Shafay,ssn2, ,add,office,18,9
-Shafay,ssn3UPDATED,homes ph,add,office,18,9
+Shafay Haq,SSN,home phone, ,office phone,18,3.5
+Shafay,ssn,homes ph,add,office,18,9.7
+Shafay,ssn1,homes ph,add,office,18,9.2
+Shafay,ssn2, ,add,office,18,9.5
+Shafay,ssn3UPDATED,homes ph,add,office,18,9.8
+Shafay,ssn3,homes ph,add,office,18,9.8
