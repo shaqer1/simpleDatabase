@@ -1,0 +1,7 @@
+Failure | 2018-09-06 13:14:59:100 | INSERT <Shafay Haq,SSN,home phone, ,office phone,18,3.5
+Failure | 2018-09-06 13:14:59:105 | INSERT <Shafay,ssn,homes ph,add,office,18,9.7
+Failure | 2018-09-06 13:14:59:109 | INSERT <Shafay,ssn1,homes ph,add,office,18,9.2
+Failure | 2018-09-06 13:14:59:114 | INSERT <Shafay,ssn2, ,add,office,18,9.5
+Failure | 2018-09-06 13:14:59:118 | INSERT <Shafay,ssn3,homes ph,add,office,18,9.8
+Failure | 2018-09-06 13:15:13:434 | DELETE <Shafay Haq,SSN,home phone, ,office phone,18,3.9
+Failure | 2018-09-06 13:15:13:436 | UPDATE <Shafay,ssn3,homes ph,add,office,18,9.8 <Shafay,ssn3UPDATED,homes ph,add,office,18,9.8
