@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.Scanner;
 
 public class Database {
-    private static final String FILE_PATH = "records.txt";
+    private static String FILE_PATH = "records.txt";
     private static String LOG_FILE_PATH = "log_database";
     private PrintWriter logWriter;
     private PrintWriter fileWriter;
@@ -14,8 +14,9 @@ public class Database {
     public Database(){//todo user?
         records = new ArrayList<>();
         try {
+            FILE_PATH = FILE_PATH+"_"+ System.getenv("USER");
             fileWriter = new PrintWriter(new FileWriter(FILE_PATH, true));
-            LOG_FILE_PATH = LOG_FILE_PATH +getTimestamp();
+            LOG_FILE_PATH = LOG_FILE_PATH +"_"+ System.getenv("USER")+"_"+ getTimestamp();
             logWriter = new PrintWriter(new FileWriter(LOG_FILE_PATH, true));
             fileReader = new Scanner(new File(FILE_PATH));
         } catch (IOException e) {
@@ -29,7 +30,12 @@ public class Database {
 
     public static void main(String[] args) {
         Database d = new Database();
-        d.clearFile(LOG_FILE_PATH);
+        //d.clearFile(LOG_FILE_PATH);
+        try {
+            d.importData(new Scanner(new File("initialData.txt")));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         d.importData();
         d.fileReader.close();
         Scanner sys = new Scanner(System.in);
@@ -64,11 +70,12 @@ public class Database {
         d.logWriter.close();
     }
 
+
     private int printTable() {
         System.out.println("------------DATABASE START------------");
-        System.out.printf("%4s %15s %15s %15s %15s %15s %8s %8s\n","Index","Name","SSN", "Home Phone", "Address", "Office Phone","Age","GPA");
+        System.out.printf("%4s %15s %15s %15s %25s %15s %8s %8s\n","Index","Name","SSN", "Home Phone", "Address", "Office Phone","Age","GPA");
         for (int i = 0; i < records.size(); i++) {
-            System.out.printf("%4d %15s %15s %15s %15s %15s %8d %8.1f\n",i+1,records.get(i).getName(),records.get(i).getSsn(), records.get(i).getHomePhone()
+            System.out.printf("%4d %15s %15s %15s %25s %15s %8d %8.1f\n",i+1,records.get(i).getName(),records.get(i).getSsn(), records.get(i).getHomePhone()
                     , records.get(i).getAddress(), records.get(i).getOfficePhone(),records.get(i).getAge(),records.get(i).getGpa());
         }
         System.out.println("------------DATABASE END--------------");
@@ -165,6 +172,10 @@ public class Database {
     }
 
     private void importData() {
+        importData(this.fileReader);
+    }
+
+    private void importData(Scanner fileReader) {
         while(fileReader.hasNextLine()){
             String [] record = fileReader.nextLine().split(",");
             records.add(parseRecord(record));

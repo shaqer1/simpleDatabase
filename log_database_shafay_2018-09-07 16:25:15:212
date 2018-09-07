@@ -1,0 +1,13 @@
+Success | 2018-09-07 16:30:24:903 | INSERT <Shafay Haq,SSN,home phone, ,office phone,18,3.5
+Failure | 2018-09-07 16:30:36:503 | UPDATE <Shafay,ssn3,homes ph,add,office,18,9.8 <Shafay,ssn3UPDATED,homes ph,add,office,18,9.8
+Failure | 2018-09-07 16:30:47:914 | INSERT <Shafay,ssn3,homes ph,add,office,18,9.8
+Success | 2018-09-07 16:30:56:664 | DELETE <Shafay Haq,SSN,home phone, ,office phone,18,3.5
+Failure | 2018-09-07 16:31:10:236 | UPDATE <Shafay,ssn3,homes ph,add,office,18,9.8 <Shafay,ssn3UPDATED,homes ph,add,office,18,9.8
+Failure | 2018-09-07 16:31:30:438 | UPDATE <Shafay,ssn2,homes ph,add,office,18,9.8 <Shafay,ssn2UPDATED,homes ph,add,office,18,9.8
+Failure | 2018-09-07 16:32:10:140 | DELETE INSERT <Shafay,ssn,homes ph,add,office,18,9.7
+Success | 2018-09-07 16:32:33:849 | DELETE <Shafay,ssn,homes ph,add,office,18,9.7
+Success | 2018-09-07 16:32:43:439 | DELETE <Shafay,ssn1,homes ph,add,office,18,9.2
+Success | 2018-09-07 16:32:52:835 | DELETE <Shafay,ssn2, ,add,office,18,9.5
+Success | 2018-09-07 16:33:03:231 | DELETE <Shafay,ssn3,homes ph,add,office,18,9.8
+Failure | 2018-09-07 16:33:14:712 | DELETE <Shafay Haq,SSN,home phone, ,office phone,18,3.5
+Success | 2018-09-07 16:33:30:887 | DELETE <Shafay,ssn3UPDATED,homes ph,add,office,18,9.8

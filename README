@@ -1,0 +1,134 @@
+Project 1 
+Shafay Haq 
+CS 448
+Bharat Bhargava
+
+
+The program contains 4 files
+Record.java - Data structure for Record
+Database.java - Main method and database running 
+initiaData.txt - comma seperated values of initial records.
+README - read me file for data base
+
+Assumptions
+
+1) Null values are spaces when entering data, and they a null pointers in programs.
+They are written to files as spaces as well.
+
+2) records in commands begin with < eg.
+DELETE <Shafay Haq,SSN,home phone, ,office phone,18,3.5
+UPDATE <Shafay,ssn3,homes ph,add,office,18,9.8 <Shafay,ssn3UPDATED,homes ph,add,office,18,9.8
+
+3) program runs in a loop until "quit" is entered, case insensitive. 
+
+4) Commands are case sensitive, all upper case. The commands are UPDATE, INSERT, DELETE, DATABASE, LOG. 
+Database prints the current database in an ascii table.
+LOG prints current users log file.
+
+5) log file is saved with timestamp and user name. Database file is saved with username. 
+This database file stores records at end of program for each user, and reads these records at startup.
+
+6) data is stored in file as comma seperated in database file.
+Log file has following format as lines 
+SUCcESS/FAILURE | timestamp | Command
+The log file is created for every run
+
+7) status of commands is printed after every command
+
+8) there is no primary key, every record in its entirety is compared to prevent duplicate records
+
+Execution example below
+
+
+/home/shafay/jdk-9.0.1/bin/java -javaagent:/home/shafay/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/181.4445.78/lib/idea_rt.jar=45299:/home/shafay/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/181.4445.78/bin -Dfile.encoding=UTF-8 -classpath /home/shafay/Drive/purdue/CS/cs448/p1/out/production/p1 Database
+DATABASE
+------------DATABASE START------------
+Index            Name             SSN      Home Phone                   Address    Office Phone      Age      GPA
+   1  Benjamin Bayer     305-61-2435   (817)373-1616      2918 Bluebonnet Lane            null       19      3.2
+   2   Chung-cha Kim     381-62-1245   (817)375-4409            125 Kirby Road            null       18      2.9
+   3   Dick Davidson     422-11-2320            null           3452 Elgin Road   (817)749-1253       25      3.5
+   4   Rohan Panchal     489-22-1100   (817)376-9821             265 Lark Lane   (817)749-6492       28      3.9
+   5  Barbara Benson     533-69-1238   (817)839-8461         7384 Fontana Lane            null       19      3.3
+   6  Benjamin Bayer     305-61-2435   (817)373-1616      2918 Bluebonnet Lane            null       19      3.2
+   7   Chung-cha Kim     381-62-1245   (817)375-4409            125 Kirby Road            null       18      2.9
+   8   Dick Davidson     422-11-2320            null           3452 Elgin Road   (817)749-1253       25      3.5
+   9   Rohan Panchal     489-22-1100   (817)376-9821             265 Lark Lane   (817)749-6492       28      3.9
+  10  Barbara Benson     533-69-1238   (817)839-8461         7384 Fontana Lane            null       19      3.3
+  11  Benjamin Bayer     305-61-2435   (817)373-1616      2918 Bluebonnet Lane            null       19      3.2
+  12   Chung-cha Kim     381-62-1245   (817)375-4409            125 Kirby Road            null       18      2.9
+  13   Dick Davidson     422-11-2320            null           3452 Elgin Road   (817)749-1253       25      3.5
+  14   Rohan Panchal     489-22-1100   (817)376-9821             265 Lark Lane   (817)749-6492       28      3.9
+  15  Barbara Benson     533-69-1238   (817)839-8461         7384 Fontana Lane            null       19      3.3
+  16  Benjamin Bayer     305-61-2435   (817)373-1616      2918 Bluebonnet Lane            null       19      3.2
+  17   Chung-cha Kim     381-62-1245   (817)375-4409            125 Kirby Road            null       18      2.9
+  18   Dick Davidson     422-11-2320            null           3452 Elgin Road   (817)749-1253       25      3.5
+  19   Rohan Panchal     489-22-1100   (817)376-9821             265 Lark Lane   (817)749-6492       28      3.9
+  20  Barbara Benson     533-69-1238   (817)839-8461         7384 Fontana Lane            null       19      3.3
+------------DATABASE END--------------
+LOG
+------------log_database_shafay_2018-09-07 16:33:51:311 START------------
+------------log_database_shafay_2018-09-07 16:33:51:311 END--------------
+INSERT <Shafay Haq,SSN,home phone, ,office phone,18,3.5
+INSERTSuccess
+INSERT <Shafay,ssn,homes ph,add,office,18,9.7
+INSERTSuccess
+INSERT <Shafay,ssn1,homes ph,add,office,18,9.2
+INSERTSuccess
+INSERT <Shafay,ssn2, ,add,office,18,9.5
+INSERTSuccess
+INSERT <Shafay,ssn3,homes ph,add,office,18,9.8
+INSERTSuccess
+DELETE <Shafay Haq,SSN,home phone, ,office phone,18,3.5
+DELETESuccess
+UPDATE <Shafay,ssn3,homes ph,add,office,18,9.8 <Shafay,ssn3UPDATED,homes ph,add,office,18,9.8
+UPDATESuccess
+DELETE <Shafay Haq,SSN,home phone, ,office phone,18,3.5
+DELETEFailure
+UPDATE <Shafay,ssn3,homes ph,add,office,18,9.8 <Shafay,ssn3UPDATED,homes ph,add,office,18,9.8
+UPDATEFailure
+INSERT <Shafay,ssn,homes ph,add,office,18,9.7
+INSERTFailure
+DATABASE
+------------DATABASE START------------
+Index            Name             SSN      Home Phone                   Address    Office Phone      Age      GPA
+   1  Benjamin Bayer     305-61-2435   (817)373-1616      2918 Bluebonnet Lane            null       19      3.2
+   2   Chung-cha Kim     381-62-1245   (817)375-4409            125 Kirby Road            null       18      2.9
+   3   Dick Davidson     422-11-2320            null           3452 Elgin Road   (817)749-1253       25      3.5
+   4   Rohan Panchal     489-22-1100   (817)376-9821             265 Lark Lane   (817)749-6492       28      3.9
+   5  Barbara Benson     533-69-1238   (817)839-8461         7384 Fontana Lane            null       19      3.3
+   6  Benjamin Bayer     305-61-2435   (817)373-1616      2918 Bluebonnet Lane            null       19      3.2
+   7   Chung-cha Kim     381-62-1245   (817)375-4409            125 Kirby Road            null       18      2.9
+   8   Dick Davidson     422-11-2320            null           3452 Elgin Road   (817)749-1253       25      3.5
+   9   Rohan Panchal     489-22-1100   (817)376-9821             265 Lark Lane   (817)749-6492       28      3.9
+  10  Barbara Benson     533-69-1238   (817)839-8461         7384 Fontana Lane            null       19      3.3
+  11  Benjamin Bayer     305-61-2435   (817)373-1616      2918 Bluebonnet Lane            null       19      3.2
+  12   Chung-cha Kim     381-62-1245   (817)375-4409            125 Kirby Road            null       18      2.9
+  13   Dick Davidson     422-11-2320            null           3452 Elgin Road   (817)749-1253       25      3.5
+  14   Rohan Panchal     489-22-1100   (817)376-9821             265 Lark Lane   (817)749-6492       28      3.9
+  15  Barbara Benson     533-69-1238   (817)839-8461         7384 Fontana Lane            null       19      3.3
+  16  Benjamin Bayer     305-61-2435   (817)373-1616      2918 Bluebonnet Lane            null       19      3.2
+  17   Chung-cha Kim     381-62-1245   (817)375-4409            125 Kirby Road            null       18      2.9
+  18   Dick Davidson     422-11-2320            null           3452 Elgin Road   (817)749-1253       25      3.5
+  19   Rohan Panchal     489-22-1100   (817)376-9821             265 Lark Lane   (817)749-6492       28      3.9
+  20  Barbara Benson     533-69-1238   (817)839-8461         7384 Fontana Lane            null       19      3.3
+  21          Shafay             ssn        homes ph                       add          office       18      9.7
+  22          Shafay            ssn1        homes ph                       add          office       18      9.2
+  23          Shafay            ssn2            null                       add          office       18      9.5
+  24          Shafay     ssn3UPDATED        homes ph                       add          office       18      9.8
+------------DATABASE END--------------
+LOG
+------------log_database_shafay_2018-09-07 16:33:51:311 START------------
+Success | 2018-09-07 16:34:20:175 | INSERT <Shafay Haq,SSN,home phone, ,office phone,18,3.5
+Success | 2018-09-07 16:34:26:740 | INSERT <Shafay,ssn,homes ph,add,office,18,9.7
+Success | 2018-09-07 16:34:32:501 | INSERT <Shafay,ssn1,homes ph,add,office,18,9.2
+Success | 2018-09-07 16:34:38:511 | INSERT <Shafay,ssn2, ,add,office,18,9.5
+Success | 2018-09-07 16:34:43:527 | INSERT <Shafay,ssn3,homes ph,add,office,18,9.8
+Success | 2018-09-07 16:34:48:096 | DELETE <Shafay Haq,SSN,home phone, ,office phone,18,3.5
+Success | 2018-09-07 16:34:53:052 | UPDATE <Shafay,ssn3,homes ph,add,office,18,9.8 <Shafay,ssn3UPDATED,homes ph,add,office,18,9.8
+Failure | 2018-09-07 16:35:04:806 | DELETE <Shafay Haq,SSN,home phone, ,office phone,18,3.5
+Failure | 2018-09-07 16:35:10:607 | UPDATE <Shafay,ssn3,homes ph,add,office,18,9.8 <Shafay,ssn3UPDATED,homes ph,add,office,18,9.8
+Failure | 2018-09-07 16:35:15:563 | INSERT <Shafay,ssn,homes ph,add,office,18,9.7
+------------log_database_shafay_2018-09-07 16:33:51:311 END--------------
+quit
+
+Process finished with exit code 0
