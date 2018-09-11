@@ -40,7 +40,7 @@ public class Database {
         d.fileReader.close();
         Scanner sys = new Scanner(System.in);
         String line;
-        while(!(line = sys.nextLine()).equalsIgnoreCase("quit")){
+        while(sys.hasNextLine() && !(line = sys.nextLine()).equalsIgnoreCase("quit")){
             String [] commands = line.split(" <");
             int result = 0;
             switch(commands[0]){
